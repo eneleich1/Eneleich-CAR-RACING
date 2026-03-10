@@ -1,0 +1,10 @@
+Assets {
+  Id: 11849597323960928271
+  Name: "GoTo_SelectKartScene"
+  PlatformAssetType: 3
+  TextAsset {
+    CustomParameters {
+    }
+  }
+  SerializationVersion: 125
+}

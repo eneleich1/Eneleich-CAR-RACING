@@ -1,3 +1,3 @@
 LeaderboardConfigs {
 }
-MainScene: "Main"
+MainScene: "Presentation Scene"

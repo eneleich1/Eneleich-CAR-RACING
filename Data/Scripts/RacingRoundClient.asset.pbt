@@ -19,7 +19,6 @@ Assets {
       Overrides {
         Name: "cs:ComponentRoot"
         ObjectReference {
-          SelfId: 1015596292848998404
         }
       }
     }
