@@ -639,7 +639,7 @@ Objects {
     Overrides {
       Name: "cs:DefaultVehicle"
       AssetReference {
-        Id: 17655265101728568550
+        Id: 9812805254859464304
       }
     }
     Overrides {
