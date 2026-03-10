@@ -1,0 +1,76 @@
+Resumen de cambios - Main Menu Multiplayer (Paso 1)
+====================================================
+
+Fecha: 2026-03-10
+Branch: feat/main-menu-multiplayer-entry
+
+Objetivo cumplido
+-----------------
+Se implemento el primer paso del flujo tipo Mario Kart sobre el proyecto actual de Core Racing:
+- Se agrego un Main Menu simple en lobby con una sola opcion: MULTIPLAYER.
+- Al hacer click en MULTIPLAYER, se reutiliza el flujo existente de lobby/play area.
+- No se modifico la logica de rondas, pistas, selector de vehiculo ni teleporter.
+
+Archivos creados
+----------------
+1) Data/Scripts/MainMenuClient.lua
+2) Data/Scripts/MainMenuServer.lua
+
+Detalle de implementacion
+-------------------------
+1) MainMenuClient.lua (cliente)
+- Requiere APIBasicGameState.
+- Lee custom properties:
+  - APIBasicGameState
+  - ComponentRoot
+  - Panel
+  - MultiplayerButton
+- Muestra menu solo en estado LOBBY.
+- Oculta menu fuera de LOBBY.
+- Implementa flag de debounce/dismiss por lobby para evitar re-apertura inmediata.
+- Al volver a lobby en ciclos futuros, resetea estado y vuelve a mostrar menu.
+- Maneja cursor UI:
+  - UI.SetCursorVisible(...)
+  - UI.SetCanCursorInteractWithUI(...)
+- Al click en MULTIPLAYER:
+  - Oculta menu
+  - Marca dismiss local
+  - Envia evento al server: MainMenu_PlayMultiplayer
+
+2) MainMenuServer.lua (server)
+- Escucha evento de jugador: MainMenu_PlayMultiplayer
+- Valida que el objeto sea un Player valido.
+- Reutiliza flujo actual sin duplicar spawn logic:
+  - Events.Broadcast("EnterLobbyPlayArea", player)
+
+UI requerida en Core Editor (manual)
+------------------------------------
+Estructura minima:
+- MainMenuUI
+  - Panel
+    - TitleLabel (texto: ENELEICH CAR RACING)
+    - MultiplayerButton (texto: MULTIPLAYER)
+
+Wiring manual requerido
+-----------------------
+En MainMenuClient.lua asignar custom properties a:
+- APIBasicGameState -> Data/Scripts/APIBasicGameState.lua
+- ComponentRoot -> root del menu
+- Panel -> panel principal
+- MultiplayerButton -> boton MULTIPLAYER
+
+Alcance y limitaciones de este cambio
+-------------------------------------
+- NO se implemento seleccion de personaje.
+- NO se implemento seleccion de pista.
+- NO se implementaron items, boosts ni drift en este cambio.
+- NO se altero RacingRoundServer.lua.
+- NO se toco la logica existente de teleporter ni selector de vehiculos.
+
+Prueba funcional sugerida
+-------------------------
+1) Entrar al juego y esperar estado lobby.
+2) Ver menu principal con boton MULTIPLAYER.
+3) Click en MULTIPLAYER.
+4) Verificar entrada al flujo existente EnterLobbyPlayArea (vehiculo y driver).
+5) Verificar que al salir de lobby y volver en un ciclo futuro, el menu reaparece.
