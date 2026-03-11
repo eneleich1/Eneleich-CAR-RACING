@@ -152,6 +152,7 @@ Objects {
   }
   ParentId: 6875717089500325028
   ChildIds: 1309249085296409548
+  ChildIds: 3834714905291341981
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -237,6 +238,51 @@ Objects {
         }
       }
     }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3834714905291341981
+  Name: "GoTo_SelectKartScene"
+  Transform {
+    Location {
+      X: 0.0110485442
+      Y: -0.0110485423
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4615529784960664368
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:TrackIndex"
+      Int: 3
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 11849597323960928271
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -342,6 +388,7 @@ Objects {
   }
   ParentId: 6875717089500325028
   ChildIds: 6129545958426159363
+  ChildIds: 3629174698130117001
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -427,6 +474,51 @@ Objects {
         }
       }
     }
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 3629174698130117001
+  Name: "GoTo_SelectKartScene"
+  Transform {
+    Location {
+      X: 0.00207160204
+      Y: -0.0020716018
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17638951407410205225
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:TrackIndex"
+      Int: 2
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 11849597323960928271
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
   IsReplicationEnabledByDefault: true
 }
@@ -635,6 +727,12 @@ Objects {
     }
   }
   ParentId: 200694014369796831
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:TrackIndex"
+      Int: 1
+    }
+  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
