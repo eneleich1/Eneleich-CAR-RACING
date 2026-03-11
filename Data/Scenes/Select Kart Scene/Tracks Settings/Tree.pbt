@@ -35026,7 +35026,7 @@ Objects {
     Overrides {
       Name: "cs:Vehicle"
       AssetReference {
-        Id: 9812805254859464304
+        Id: 9519624927967907359
       }
     }
   }
@@ -35112,7 +35112,7 @@ Objects {
     Overrides {
       Name: "cs:Vehicle"
       AssetReference {
-        Id: 9812805254859464304
+        Id: 9519624927967907359
       }
     }
   }
