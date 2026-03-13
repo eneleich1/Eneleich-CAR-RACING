@@ -3,6 +3,6 @@ Entries {
     StringVar: "SelectedTrackIndex"
   }
   SimpleValue {
-    IntVar: 2
+    IntVar: 3
   }
 }

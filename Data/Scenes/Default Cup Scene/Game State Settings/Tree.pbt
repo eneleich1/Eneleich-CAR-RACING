@@ -40,7 +40,7 @@ Objects {
         }
         Overrides {
           Name: "cs:RoundEndCountdownTime"
-          Float: 15
+          Float: 3
         }
         Overrides {
           Name: "Scale"
@@ -100,7 +100,7 @@ Objects {
         }
         Overrides {
           Name: "cs:CountdownTime"
-          Float: 30
+          Float: 5
         }
       }
     }

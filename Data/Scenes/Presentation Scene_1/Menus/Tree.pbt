@@ -2,7 +2,7 @@ Name: "Menus"
 RootId: 17963878570662154367
 Objects {
   Id: 4390512213618120721
-  Name: "Select Track Menu"
+  Name: "Select Cup Menu"
   Transform {
     Location {
       X: 650
@@ -88,8 +88,7 @@ Objects {
   ParentId: 4390512213618120721
   ChildIds: 12800325201165899771
   ChildIds: 200694014369796831
-  ChildIds: 17638951407410205225
-  ChildIds: 4615529784960664368
+  ChildIds: 6691205305455182
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -134,13 +133,13 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 4615529784960664368
-  Name: "Modern Space buttom"
+  Id: 6691205305455182
+  Name: "Mariel Cup buttom"
   Transform {
     Location {
-      X: 79549.5
-      Y: 68518.6562
-      Z: -200
+      X: 39774.75
+      Y: 34259.3281
+      Z: -100
     }
     Rotation {
     }
@@ -151,8 +150,9 @@ Objects {
     }
   }
   ParentId: 6875717089500325028
-  ChildIds: 1309249085296409548
-  ChildIds: 3834714905291341981
+  ChildIds: 15189504754137801291
+  ChildIds: 7506748758015291674
+  ChildIds: 9763168032387913533
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -168,8 +168,7 @@ Objects {
   Control {
     Width: 348
     Height: 301
-    UIX: 492.319946
-    UIY: 15.6100464
+    UIX: 150
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -242,12 +241,10 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 3834714905291341981
-  Name: "GoTo_SelectKartScene"
+  Id: 9763168032387913533
+  Name: "GoTo_MarielCupScene"
   Transform {
     Location {
-      X: 0.0110485442
-      Y: -0.0110485423
     }
     Rotation {
     }
@@ -257,11 +254,11 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4615529784960664368
+  ParentId: 6691205305455182
   UnregisteredParameters {
     Overrides {
-      Name: "cs:TrackIndex"
-      Int: 3
+      Name: "cs:TargetSceneName"
+      String: "Mariel Cup Scene"
     }
   }
   Collidable_v2 {
@@ -287,16 +284,16 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 1309249085296409548
+  Id: 7506748758015291674
   Name: "UI Text Box"
   Transform {
     Location {
-      X: -8325.42188
-      Y: -84.1716309
-      Z: 1507.63354
+      X: -5161.88086
+      Y: 1272.79346
+      Z: -350
     }
     Rotation {
-      Yaw: -178.231461
+      Yaw: -44.9999924
     }
     Scale {
       X: 1
@@ -304,7 +301,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 4615529784960664368
+  ParentId: 6691205305455182
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -318,32 +315,31 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 263
-    Height: 259
-    UIX: 48.9407959
-    UIY: 19.2195435
+    Width: 200
+    Height: 60
+    UIX: 100
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
       }
     }
     Text {
-      Label: "Modern Space"
+      Label: "Mariel Cup"
       Color {
-        R: 0.023973925
-        B: 0.603333235
+        R: 0.590000033
+        B: 0.250065655
         A: 1
       }
-      Size: 50
+      Size: 28
       Justification {
-        Value: "mc:etextjustify:center"
+        Value: "mc:etextjustify:left"
       }
       AutoWrapText: true
       Font {
         Id: 841534158063459245
       }
       VerticalJustification {
-        Value: "mc:everticaljustification:center"
+        Value: "mc:everticaljustification:top"
       }
       ShadowColor {
         A: 1
@@ -370,160 +366,7 @@ Objects {
   IsReplicationEnabledByDefault: true
 }
 Objects {
-  Id: 17638951407410205225
-  Name: "Rally buttom"
-  Transform {
-    Location {
-      X: 39774.75
-      Y: 34259.3281
-      Z: -100
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 6875717089500325028
-  ChildIds: 6129545958426159363
-  ChildIds: 3629174698130117001
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Control {
-    Width: 348
-    Height: 301
-    UIX: -57.3875732
-    UIY: 8.62115479
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    IsHittable: true
-    Button {
-      FontColor {
-        A: 1
-      }
-      FontSize: 20
-      ButtonColor {
-        R: 0.813487828
-        G: 1
-        B: 0.603333354
-        A: 1
-      }
-      HoveredColor {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      PressedColor {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      DisabledColor {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      Brush {
-        Id: 841534158063459245
-      }
-      IsButtonEnabled: true
-      ClickMode {
-        Value: "mc:ebuttonclickmode:default"
-      }
-      Font {
-      }
-      Justification {
-        Value: "mc:etextjustify:center"
-      }
-      VerticalJustification {
-        Value: "mc:everticaljustification:center"
-      }
-      ShadowColor {
-        A: 1
-      }
-      ShadowOffset {
-      }
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:middlecenter"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:middlecenter"
-        }
-      }
-    }
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 3629174698130117001
-  Name: "GoTo_SelectKartScene"
-  Transform {
-    Location {
-      X: 0.00207160204
-      Y: -0.0020716018
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 17638951407410205225
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:TrackIndex"
-      Int: 2
-    }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 11849597323960928271
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-  IsReplicationEnabledByDefault: true
-}
-Objects {
-  Id: 6129545958426159363
+  Id: 15189504754137801291
   Name: "UI Text Box"
   Transform {
     Location {
@@ -540,7 +383,7 @@ Objects {
       Z: 1
     }
   }
-  ParentId: 17638951407410205225
+  ParentId: 6691205305455182
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -554,23 +397,22 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 263
-    Height: 259
-    UIX: 48.9407959
-    UIY: 19.2195435
+    Width: 300
+    Height: 218
+    UIY: 50
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
       }
     }
     Text {
-      Label: "Rally"
+      Label: "Turcios Lima\r\nEl Castillito\r\nLa Puntilla\r\nRio de las dos Palmas"
       Color {
         R: 0.023973925
         B: 0.603333235
         A: 1
       }
-      Size: 50
+      Size: 28
       Justification {
         Value: "mc:etextjustify:center"
       }
@@ -607,7 +449,7 @@ Objects {
 }
 Objects {
   Id: 200694014369796831
-  Name: "Inside the Castle buttom"
+  Name: "Default Cup buttom"
   Transform {
     Location {
       X: -0.000690534
@@ -623,6 +465,7 @@ Objects {
   }
   ParentId: 6875717089500325028
   ChildIds: 9812547126925554887
+  ChildIds: 15667974774010947848
   ChildIds: 13942973940273482405
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -639,8 +482,7 @@ Objects {
   Control {
     Width: 348
     Height: 301
-    UIX: -510.961731
-    UIY: 10.3683777
+    UIX: -350
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
@@ -714,7 +556,7 @@ Objects {
 }
 Objects {
   Id: 13942973940273482405
-  Name: "GoTo_SelectKartScene"
+  Name: "GoTo_DefaultCupScene"
   Transform {
     Location {
     }
@@ -729,8 +571,8 @@ Objects {
   ParentId: 200694014369796831
   UnregisteredParameters {
     Overrides {
-      Name: "cs:TrackIndex"
-      Int: 1
+      Name: "cs:TargetSceneName"
+      String: "Default Cup Scene"
     }
   }
   Collidable_v2 {
@@ -752,6 +594,88 @@ Objects {
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 15667974774010947848
+  Name: "UI Text Box"
+  Transform {
+    Location {
+      X: -5161.88086
+      Y: 1272.79346
+      Z: -350
+    }
+    Rotation {
+      Yaw: -44.9999924
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 200694014369796831
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 200
+    Height: 60
+    UIX: 100
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Text {
+      Label: "Default Cup"
+      Color {
+        R: 0.590000033
+        B: 0.250065655
+        A: 1
+      }
+      Size: 28
+      Justification {
+        Value: "mc:etextjustify:left"
+      }
+      AutoWrapText: true
+      Font {
+        Id: 841534158063459245
+      }
+      VerticalJustification {
+        Value: "mc:everticaljustification:top"
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      OutlineColor {
+        A: 1
+      }
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
   }
   IsReplicationEnabledByDefault: true
 }
@@ -787,23 +711,23 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 263
-    Height: 259
+    Width: 250
+    Height: 218
     UIX: 48.9407959
-    UIY: 19.2195435
+    UIY: 60.2195435
     RenderTransformPivot {
       Anchor {
         Value: "mc:euianchor:middlecenter"
       }
     }
     Text {
-      Label: "Inside the Castle"
+      Label: "Inside the Castle\r\nRally\r\nModern Space\r\nNeed for F1 Speed"
       Color {
         R: 0.023973925
         B: 0.603333235
         A: 1
       }
-      Size: 50
+      Size: 28
       Justification {
         Value: "mc:etextjustify:center"
       }
@@ -955,7 +879,7 @@ Objects {
       }
     }
     Text {
-      Label: "Select Track"
+      Label: "Select Cup"
       Color {
         R: 0.621192515
         B: 0.669999957

@@ -1,4 +1,4 @@
-local TARGET_SCENE_NAME = "Default Cup Scene"
+local TARGET_SCENE_NAME = "Mariel Cup Scene"
 
 local function OnGoToRaceScene(player, trackIndex)
     if not Object.IsValid(player) then
@@ -11,4 +11,4 @@ local function OnGoToRaceScene(player, trackIndex)
     player:TransferToScene(TARGET_SCENE_NAME)
 end
 
-Events.ConnectForPlayer("Default Cup Scene", OnGoToRaceScene)
+Events.ConnectForPlayer("Mariel Cup Scene", OnGoToRaceScene)
