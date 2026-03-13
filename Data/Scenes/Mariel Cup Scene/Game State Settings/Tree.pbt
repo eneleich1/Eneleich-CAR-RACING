@@ -154,6 +154,10 @@ Objects {
           Name: "cs:RoundHasDuration"
           Bool: false
         }
+        Overrides {
+          Name: "cs:RoundEndDuration"
+          Float: 30
+        }
       }
     }
     TemplateAsset {

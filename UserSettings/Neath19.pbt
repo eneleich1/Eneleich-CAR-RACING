@@ -96,12 +96,17 @@ ObjectSettings {
     }
   }
   ObjectStates {
+    key: 14444892721913438906
+    value {
+    }
+  }
+  ObjectStates {
     key: 17638951407410205225
     value {
     }
   }
 }
-LastSavedScene: "Presentation Scene"
+LastSavedScene: "Mariel Cup Scene"
 PreviewDetailLevelPerScene {
   key: "Main"
   value: 1

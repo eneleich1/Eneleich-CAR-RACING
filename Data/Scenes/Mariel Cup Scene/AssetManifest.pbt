@@ -44,6 +44,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16965777294932964901
+  Name: "Cube - Chamfered Large Polished"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_cube_hq_002"
+  }
+}
+Assets {
   Id: 16261184967792815036
   Name: "Street Light 01"
   PlatformAssetType: 1
@@ -86,6 +95,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_column_top_002"
+  }
+}
+Assets {
+  Id: 14140292252145796470
+  Name: "Bullet 2"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Military_Icon_020"
   }
 }
 Assets {
@@ -140,6 +158,24 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_kelp_tile_01"
+  }
+}
+Assets {
+  Id: 11217764703339954950
+  Name: "Fantasy Bracers 020"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Gear_Bracers_020"
+  }
+}
+Assets {
+  Id: 11034472157046438472
+  Name: "Fantasy Mushroom 005"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "UI_Fantasy_Food_Mushroom_005"
   }
 }
 Assets {
@@ -374,6 +410,15 @@ Assets {
   PrimaryAsset {
     AssetType: "StaticMeshAssetRef"
     AssetId: "sm_tree_oak_002"
+  }
+}
+Assets {
+  Id: 2520365978143170663
+  Name: "Banana"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "Icon_Banana"
   }
 }
 Assets {

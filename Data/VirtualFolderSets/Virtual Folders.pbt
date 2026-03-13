@@ -25,5 +25,9 @@ Assets {
       VirtualFolderPath: "Vehicle"
       PlatformAssetType: 3
     }
+    Folders {
+      VirtualFolderPath: "Eneleich Scripts"
+      PlatformAssetType: 3
+    }
   }
 }
