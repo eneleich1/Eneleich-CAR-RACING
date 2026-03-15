@@ -1884,7 +1884,7 @@ Objects {
     Overrides {
       Name: "cs:BananaTemplate"
       AssetReference {
-        Id: 801608845294411141
+        Id: 12599168776246076017
       }
     }
   }
