@@ -2,6 +2,7 @@ local MUSHROOM_SPEED_MULTIPLIER = script:GetCustomProperty("MushroomSpeedMultipl
 local MUSHROOM_DURATION = script:GetCustomProperty("MushroomDuration")
 local MUSHROOM_IMPULSE = script:GetCustomProperty("MushroomImpulse")
 local MUSHROOM_MINIMUM_BOOST_SPEED = script:GetCustomProperty("MushroomMinimumBoostSpeed")
+local BANANA_TEMPLATE = script:GetCustomProperty("BananaTemplate")
 
 local activeBoosts = {}
 
@@ -61,4 +62,40 @@ local function ApplyMushroom(player)
     end)
 end
 
+local function UseBanana(player)
+    local vehicle = player.occupiedVehicle
+    if not Object.IsValid(vehicle) then
+        return
+    end
+
+    local forward = vehicle:GetWorldTransform():GetForwardVector()
+    local flatForward = Vector3.New(forward.x, forward.y, 0)
+
+    if flatForward.sizeSquared <= 0.001 then
+        flatForward = Vector3.FORWARD
+    else
+        flatForward = flatForward:GetNormalized()
+    end
+
+    local basePosition = vehicle:GetWorldPosition() - flatForward * 300 + Vector3.UP * 200
+    local rayStart = basePosition
+    local rayEnd = basePosition - Vector3.UP * 1000
+
+    local hitResult = World.Raycast(rayStart, rayEnd, {ignorePlayers = true})
+
+    local spawnPosition = basePosition
+    if hitResult then
+        spawnPosition = hitResult:GetImpactPosition() + Vector3.UP * 10
+    end
+
+    local spawnRotation = Rotation.New(0, 0, 0)
+
+    World.SpawnAsset(BANANA_TEMPLATE, {
+        position = spawnPosition,
+        rotation = spawnRotation,
+        networkContext = NetworkContextType.NETWORKED
+    })
+end
+
 Events.ConnectForPlayer("UseMushroom", ApplyMushroom)
+Events.ConnectForPlayer("UseBanana", UseBanana)

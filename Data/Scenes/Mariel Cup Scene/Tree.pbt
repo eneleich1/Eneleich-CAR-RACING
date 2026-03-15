@@ -1867,7 +1867,7 @@ Objects {
   UnregisteredParameters {
     Overrides {
       Name: "cs:MushroomSpeedMultiplier"
-      Float: 7
+      Float: 6
     }
     Overrides {
       Name: "cs:MushroomDuration"
@@ -1880,6 +1880,12 @@ Objects {
     Overrides {
       Name: "cs:MushroomMinimumBoostSpeed"
       Float: 5000
+    }
+    Overrides {
+      Name: "cs:BananaTemplate"
+      AssetReference {
+        Id: 801608845294411141
+      }
     }
   }
   Collidable_v2 {

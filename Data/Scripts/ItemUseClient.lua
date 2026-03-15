@@ -2,6 +2,16 @@ local ITEM_INVENTORY_MODULE = require(script:GetCustomProperty("ItemInventoryMod
 
 local localPlayer = Game.GetLocalPlayer()
 
+local ITEM_USE_ACTIONS = {
+    Mushroom = function()
+        Events.BroadcastToServer("UseMushroom")
+    end,
+
+    Banana = function()
+        Events.BroadcastToServer("UseBanana")
+    end
+}
+
 local function TryUseSlot1Item()
     local slot1Item = ITEM_INVENTORY_MODULE.GetItem(1)
 
@@ -9,8 +19,9 @@ local function TryUseSlot1Item()
         return
     end
 
-    if slot1Item == "Mushroom" then
-        Events.BroadcastToServer("UseMushroom")
+    local useAction = ITEM_USE_ACTIONS[slot1Item]
+    if useAction then
+        useAction()
         ITEM_INVENTORY_MODULE.ClearSlot(1)
     end
 end

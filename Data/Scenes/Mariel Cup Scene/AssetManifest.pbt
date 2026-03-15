@@ -467,6 +467,15 @@ Assets {
   }
 }
 Assets {
+  Id: 801608845294411141
+  Name: "Nature - Mushroom 03"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_nat_fun_mushroom_003_ref"
+  }
+}
+Assets {
   Id: 404009297434166486
   Name: "Stone Window"
   PlatformAssetType: 1
