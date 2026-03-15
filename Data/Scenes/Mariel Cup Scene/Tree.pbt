@@ -137,6 +137,7 @@ Objects {
   ChildIds: 7392112423724119520
   ChildIds: 1231854292314316807
   ChildIds: 6751759759144503242
+  ChildIds: 14103165437705676274
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -164,6 +165,51 @@ Objects {
     }
     MobileMaxDetailLevel {
       Value: "mc:edetaillevel:ultra"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+  IsReplicationEnabledByDefault: true
+}
+Objects {
+  Id: 14103165437705676274
+  Name: "ItemUseClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15010767433680026892
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:ItemInventoryModule"
+      AssetReference {
+        Id: 1837847382580597211
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 2158731856600207515
     }
   }
   NetworkRelevanceDistance {
@@ -274,7 +320,7 @@ Objects {
     Overrides {
       Name: "cs:GreenShellImage"
       AssetReference {
-        Id: 7770727541953195343
+        Id: 10608444041704006282
       }
     }
   }
@@ -412,9 +458,8 @@ Objects {
         Id: 14140292252145796470
       }
       Color {
-        R: 1
-        G: 0.915320158
-        B: 0.0866666436
+        R: 0.00348781492
+        G: 0.263333321
         A: 1
       }
       TeamSettings {

@@ -197,6 +197,15 @@ Assets {
   }
 }
 Assets {
+  Id: 10608444041704006282
+  Name: "Center Arrow 008"
+  PlatformAssetType: 9
+  PrimaryAsset {
+    AssetType: "PlatformBrushAssetRef"
+    AssetId: "CenterArrow_008"
+  }
+}
+Assets {
   Id: 10493976187644509689
   Name: "Urban Vehicle Car - Tire 01"
   PlatformAssetType: 1
