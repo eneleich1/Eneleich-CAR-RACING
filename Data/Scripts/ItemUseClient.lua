@@ -1,22 +1,26 @@
 local ITEM_INVENTORY_MODULE = require(script:GetCustomProperty("ItemInventoryModule"))
 
-local function TryUseActiveItem()
-    local activeSlot = ITEM_INVENTORY_MODULE.GetActiveSlot()
-    local activeItem = ITEM_INVENTORY_MODULE.GetActiveItem()
+local localPlayer = Game.GetLocalPlayer()
 
-    if activeItem == nil then
+local function TryUseSlot1Item()
+    local slot1Item = ITEM_INVENTORY_MODULE.GetItem(1)
+
+    if slot1Item == nil then
         return
     end
 
-    if activeItem == "Mushroom" then
-        ITEM_INVENTORY_MODULE.ClearSlot(activeSlot)
+    if slot1Item == "Mushroom" then
+        Events.BroadcastToServer("UseMushroom")
+        ITEM_INVENTORY_MODULE.ClearSlot(1)
     end
 end
 
 function OnBindingPressed(player, binding)
     if binding == "ability_extra_27" then
-        TryUseActiveItem()
+        TryUseSlot1Item()
+    elseif binding == "ability_extra_28" then
+        ITEM_INVENTORY_MODULE.SwapSlots()
     end
 end
 
-Game.GetLocalPlayer().bindingPressedEvent:Connect(OnBindingPressed)
+localPlayer.bindingPressedEvent:Connect(OnBindingPressed)

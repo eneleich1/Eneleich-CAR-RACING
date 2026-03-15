@@ -68,4 +68,10 @@ function ItemInventory.TryAddItem(itemId)
     return false
 end
 
+function ItemInventory.SwapSlots()
+    local temp = ItemInventory.slot1
+    ItemInventory.slot1 = ItemInventory.slot2
+    ItemInventory.slot2 = temp
+end
+
 return ItemInventory
