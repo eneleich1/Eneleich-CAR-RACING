@@ -274,7 +274,7 @@ Objects {
     Overrides {
       Name: "cs:GreenShellImage"
       AssetReference {
-        Id: 11217764703339954950
+        Id: 7770727541953195343
       }
     }
   }
@@ -412,6 +412,9 @@ Objects {
         Id: 14140292252145796470
       }
       Color {
+        R: 1
+        G: 0.915320158
+        B: 0.0866666436
         A: 1
       }
       TeamSettings {

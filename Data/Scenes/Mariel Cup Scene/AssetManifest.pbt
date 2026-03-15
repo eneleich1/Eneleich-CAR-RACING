@@ -161,15 +161,6 @@ Assets {
   }
 }
 Assets {
-  Id: 11217764703339954950
-  Name: "Fantasy Bracers 020"
-  PlatformAssetType: 9
-  PrimaryAsset {
-    AssetType: "PlatformBrushAssetRef"
-    AssetId: "UI_Fantasy_Gear_Bracers_020"
-  }
-}
-Assets {
   Id: 11034472157046438472
   Name: "Fantasy Mushroom 005"
   PlatformAssetType: 9

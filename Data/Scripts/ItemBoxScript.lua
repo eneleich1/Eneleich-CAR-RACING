@@ -3,19 +3,40 @@ local TRIGGER = script:GetCustomProperty("PickupTrigger"):WaitForObject()
 
 local ROTATION_SPEED = script:GetCustomProperty("RotationSpeed")
 local RESPAWN_TIME = script:GetCustomProperty("RespawnTime")
-local TEST_ITEM_ID = script:GetCustomProperty("TestItemId")
 
 local ITEM_INVENTORY_MODULE = require(script:GetCustomProperty("ItemInventoryModule"))
+local LOCAL_PLAYER = Game.GetLocalPlayer()
 
 local collected = false
 
-local POSSIBLE_ITEMS = {
-    "Mushroom",
-    "Banana",
-    "GreenShell"
+VISUAL:RotateContinuous(Vector3.New(0, 0, ROTATION_SPEED), true)
+
+local ITEM_WEIGHTS = {
+    { id = "Mushroom", weight = 34 },
+    { id = "Banana", weight = 33 },
+    { id = "GreenShell", weight = 33 }
 }
 
-VISUAL:RotateContinuous(Vector3.New(0, 0, ROTATION_SPEED), true)
+local function GetRandomWeightedItem()
+    local totalWeight = 0
+
+    for _, entry in ipairs(ITEM_WEIGHTS) do
+        totalWeight = totalWeight + entry.weight
+    end
+
+    local roll = math.random() * totalWeight
+    local currentWeight = 0
+
+    for _, entry in ipairs(ITEM_WEIGHTS) do
+        currentWeight = currentWeight + entry.weight
+
+        if roll <= currentWeight then
+            return entry.id
+        end
+    end
+
+    return ITEM_WEIGHTS[#ITEM_WEIGHTS].id
+end
 
 local function OnBeginOverlap(trigger, other)
     if collected then
@@ -30,13 +51,16 @@ local function OnBeginOverlap(trigger, other)
         return
     end
 
+    if other.driver ~= LOCAL_PLAYER then
+        return
+    end
+
     if ITEM_INVENTORY_MODULE.IsFull() then
         return
     end
 
-    local randomItem = POSSIBLE_ITEMS[math.random(#POSSIBLE_ITEMS)]
-	local wasAdded = ITEM_INVENTORY_MODULE.TryAddItem(randomItem)
-
+    local randomItem = GetRandomWeightedItem()
+    local wasAdded = ITEM_INVENTORY_MODULE.TryAddItem(randomItem)
 
     if not wasAdded then
         return
