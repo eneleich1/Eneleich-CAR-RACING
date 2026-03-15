@@ -4,6 +4,10 @@ Assets {
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
+      Overrides {
+        Name: "cs:VelocityMultiplierOnHit"
+        Float: 0.2
+      }
     }
   }
   SerializationVersion: 125
