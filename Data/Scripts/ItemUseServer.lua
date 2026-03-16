@@ -26,6 +26,7 @@ local function GetFlatDirection(vector)
     return flat:GetNormalized()
 end
 
+
 local function ApplyGreenShellHit(vehicle)
     if not Object.IsValid(vehicle) then
         return
@@ -35,36 +36,69 @@ local function ApplyGreenShellHit(vehicle)
         return
     end
 
-    local currentVelocity = vehicle:GetVelocity()
-    vehicle:SetVelocity(currentVelocity * GREEN_SHELL_SLOW_MULTIPLIER)
+    if vehicle.serverUserData.greenShellHitActive then
+        return
+    end
+
+    vehicle.serverUserData.greenShellHitActive = true
 
     local originalMaxSpeed = vehicle.maxSpeed
-    vehicle.maxSpeed = originalMaxSpeed * GREEN_SHELL_SLOW_MULTIPLIER
+    local originalAccelerationRate = vehicle.accelerationRate
+    local originalTireFriction = vehicle.tireFriction
+
+    local currentVelocity = vehicle:GetVelocity()
+    local flatVelocity = Vector3.New(currentVelocity.x, currentVelocity.y, 0)
+
+    -- Hard stop first
+    vehicle:SetVelocity(Vector3.ZERO)
+
+    -- Prevent immediate recovery
+    vehicle.maxSpeed = math.max(80, originalMaxSpeed * 0.08)
+    vehicle.accelerationRate = math.max(40, originalAccelerationRate * 0.10)
+
+    -- Make it slide / spin more like a shell hit
+    vehicle.tireFriction = math.max(0.2, originalTireFriction * 0.18)
 
     Task.Spawn(function()
-        local pulseDuration = GREEN_SHELL_SPIN_DURATION / 6
-        local directions = { 1, -1, 1, -1 }
-
-        for _, direction in ipairs(directions) do
-            if not Object.IsValid(vehicle) then
-                return
-            end
-
-            vehicle:SetLocalAngularVelocity(Vector3.New(0, 0, 900 * direction))
-            Task.Wait(pulseDuration)
-
-            if not Object.IsValid(vehicle) then
-                return
-            end
-
-            vehicle:SetLocalAngularVelocity(Vector3.ZERO)
-            Task.Wait(pulseDuration * 0.5)
+        local spinDirection = 1
+        if math.random() < 0.5 then
+            spinDirection = -1
         end
 
-        if Object.IsValid(vehicle) then
-            vehicle.maxSpeed = originalMaxSpeed
-            vehicle:SetLocalAngularVelocity(Vector3.ZERO)
+        -- Initial violent spin
+        vehicle:SetLocalAngularVelocity(Vector3.New(0, 0, 1400 * spinDirection))
+
+        Task.Wait(0.22)
+
+        if not Object.IsValid(vehicle) then
+            return
         end
+
+        -- Keep it mostly stopped during the stun
+        vehicle:SetVelocity(Vector3.ZERO)
+        vehicle:SetLocalAngularVelocity(Vector3.New(0, 0, 950 * spinDirection))
+
+        Task.Wait(0.28)
+
+        if not Object.IsValid(vehicle) then
+            return
+        end
+
+        vehicle:SetVelocity(Vector3.ZERO)
+        vehicle:SetLocalAngularVelocity(Vector3.New(0, 0, 500 * spinDirection))
+
+        Task.Wait(0.20)
+
+        if not Object.IsValid(vehicle) then
+            return
+        end
+
+        -- Restore normal driving
+        vehicle:SetLocalAngularVelocity(Vector3.ZERO)
+        vehicle.maxSpeed = originalMaxSpeed
+        vehicle.accelerationRate = originalAccelerationRate
+        vehicle.tireFriction = originalTireFriction
+        vehicle.serverUserData.greenShellHitActive = nil
     end)
 end
 
