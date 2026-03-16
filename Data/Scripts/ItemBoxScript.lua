@@ -13,8 +13,8 @@ VISUAL:RotateContinuous(Vector3.New(0, 0, ROTATION_SPEED), true)
 
 local ITEM_WEIGHTS = {
     { id = "Mushroom", weight = 0 },
-    { id = "Banana", weight = 100 },
-    { id = "GreenShell", weight = 0 }
+    { id = "Banana", weight = 0 },
+    { id = "GreenShell", weight = 100 }
 }
 
 local function GetRandomWeightedItem()

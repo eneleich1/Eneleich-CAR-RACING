@@ -1887,6 +1887,32 @@ Objects {
         Id: 12599168776246076017
       }
     }
+    Overrides {
+      Name: "cs:GreenShellProjectileTemplate"
+      AssetReference {
+        Id: 6186833415090534605
+      }
+    }
+    Overrides {
+      Name: "cs:GreenShellSpeed"
+      Float: 4000
+    }
+    Overrides {
+      Name: "cs:GreenShellGravityScale"
+      Float: 0
+    }
+    Overrides {
+      Name: "cs:GreenShellLifeTime"
+      Float: 8
+    }
+    Overrides {
+      Name: "cs:GreenShellBounces"
+      Float: 20
+    }
+    Overrides {
+      Name: "cs:GreenShellBounciness"
+      Float: 0.85
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

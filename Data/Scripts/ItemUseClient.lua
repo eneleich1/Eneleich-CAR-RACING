@@ -9,6 +9,10 @@ local ITEM_USE_ACTIONS = {
 
     Banana = function()
         Events.BroadcastToServer("UseBanana")
+    end,
+
+    GreenShell = function()
+        Events.BroadcastToServer("UseGreenShell")
     end
 }
 

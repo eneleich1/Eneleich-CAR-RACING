@@ -14,7 +14,7 @@ Assets {
       }
       Overrides {
         Name: "cs:SpinAngularVelocityZ"
-        Float: 900
+        Float: 650
       }
       Overrides {
         Name: "cs:SpinMaxSpeedMultiplier"
